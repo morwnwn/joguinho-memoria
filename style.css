@@ -1,0 +1,65 @@
+@charset "utf-8";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 150vh;
+    background-color: antiquewhite;
+    background-image: linear-gradient(to bottom rgb(238, 157, 37) rgb(253, 173, 98));
+    display: flex;
+}
+.carta:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+.carta.flip {
+    transform: rotateY(180deg);
+}
+.jogo-memoria {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 10000px;
+}
+.carta {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgb(255, 102, 1);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.front-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(236, 236, 181);
+}
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(253, 219, 156);
+    backface-visibility: hidden;
+}
+input{
+    background-color: burlywood;
+    text-align: center;
+    color: rgb(27, 16, 3);
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 46%;
+    position: absolute;
+    border-radius: 15px;
+}
